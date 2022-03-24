@@ -26,7 +26,6 @@ def extract_attachment(msg, destination, temp, attachment_db):
     orig_destination = destination
     n = 1
     while os.path.exists(destination):
-        print((datetime.datetime.strptime(temp['Date'], '%a, %d %b %Y %H:%M:%S %z')).strftime('%d_%b_%y'))
         destination = orig_destination + str(n)
         n += 1
 
