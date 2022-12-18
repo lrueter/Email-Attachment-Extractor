@@ -5,6 +5,12 @@ import os
 import sys
 import threading
 
+# Get environment variables
+#AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+client = boto3.client('kinesis', config=my_config)
+
 class ProgressPercentage(object):
 
     def __init__(self, filename):
