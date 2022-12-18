@@ -1,12 +1,10 @@
-# import email
+
 import mailbox
 import os
-# import string
 import sys
 import logging
 import fnmatch
 import hashlib
-# import datetime
 
 BLACKLIST = set(['signature.asc', 'message-footer.txt', 'smime.p7s'])
 
