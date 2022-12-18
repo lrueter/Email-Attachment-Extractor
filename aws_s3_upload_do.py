@@ -4,12 +4,11 @@ from botocore.exceptions import ClientError
 import os
 import sys
 import threading
+ 
 
 # Get environment variables
 #AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 #AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-
-client = boto3.client('kinesis', config=my_config)
 
 class ProgressPercentage(object):
 
@@ -56,12 +55,12 @@ def upload_file(file_name, bucket, object_name=None):
 def main():
 
     #TODO change path
-    file = "./outputV2.zip"
+    file = "./Inbox-001.mbox"
     bucket = "gmail-export-bucket-1d7b61a8-7e8b-11ed-a1eb-0242ac120002"
-    key = "MBOX_pdf_outputV2.zip"
+    key = "Inbox-001.mbox"
 
     upload_file(file, bucket, key)
 
 if __name__ == '__main__':
     main()
-    
+

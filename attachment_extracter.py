@@ -5,6 +5,7 @@ import sys
 import logging
 import fnmatch
 import hashlib
+ 
 
 BLACKLIST = set(['signature.asc', 'message-footer.txt', 'smime.p7s'])
 
