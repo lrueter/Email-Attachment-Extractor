@@ -1,12 +1,12 @@
-import email
+# import email
 import mailbox
 import os
-import string
+# import string
 import sys
 import logging
 import fnmatch
 import hashlib
-import datetime
+# import datetime
 
 BLACKLIST = set(['signature.asc', 'message-footer.txt', 'smime.p7s'])
 
@@ -38,7 +38,8 @@ def extract_attachment(msg, destination, temp, attachment_db):
 def wanted(filename):
     if filename in BLACKLIST:
         return False
-    for ext in ['*.doc', '*.docx', '*.odt', '*.pdf', '*.rtf', "*.zip", "*.htm"]:
+#    for ext in ['*.doc', '*.docx', '*.odt', '*.pdf', '*.rtf', "*.zip", "*.htm"]:
+    for ext in ['*.pdf']:
         if fnmatch.fnmatch(filename.lower(), ext):
             return True
     return False
@@ -58,8 +59,8 @@ def main():
 
     #TODO change path
 
-    filename = "INPUT_MBOX_FILE"
-    directory = "DESTINATION_FILE"
+    filename = "./Inbox-001.mbox"
+    directory = "./outputV2"
 
     logging.basicConfig(
         filename='attachment-%s.log' % os.path.basename(filename),
